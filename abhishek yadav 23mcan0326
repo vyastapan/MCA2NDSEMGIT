@@ -1,0 +1,181 @@
+Q1.
+The Scenario:
+
+Developers Dev A, Dev B, and Dev C are working on separate features:
+Dev A: Implementing a login system.
+Dev B: Building a new product search function.
+Dev C: Fixing a critical bug.
+Branching for Feature Isolation:
+
+Branch Creation: Each developer creates a branch from the master branch for their specific feature:
+Dev A: git branch login-feature
+Dev B: git branch product-search
+Dev C: git branch bugfix-critical
+This isolates their work, allowing them to develop features independently without affecting the main codebase.
+
+Development on Feature Branches:
+
+Developers work on their features, committing changes regularly to their respective branches.
+Git keeps track of each developer's progress within their isolated branch.
+Merging and Integration:
+
+Feature Completion: Once a feature is complete and tested, the developer initiates a merge request. This alerts the team for review.
+Code Review and Merge: Other developers review the code changes on the feature branch. This ensures quality control and identifies any conflicts.
+Resolving Conflicts (Optional): If changes in different branches overlap, Git might find merge conflicts. Developers need to work together to resolve these conflicts before merging.
+Merging into Master: After successful review and conflict resolution (if applicable), the feature branch is merged into the master branch, integrating the new functionality.
+Dev A: git checkout master && git merge login-feature
+Dev B: git checkout master && git merge product-search
+Dev C (hotfix): git checkout master && git merge --ff-only bugfix-critical (For bugfixes, --ff-only attempts a fast-forward merge, keeping history clean if possible)
+Benefits:
+
+Parallel Development: Developers work on features simultaneously, accelerating development.
+Isolation and Stability: Each feature is developed in isolation, protecting the master branch from unstable code.
+Code Review and Collaboration: Merge requests enable code review and discussions, improving code quality.
+Version Control: Git keeps track of all changes and branches, allowing easy rollbacks if needed.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2.
+The Scenario:
+
+Developers Dev A, Dev B, and Dev C are working on separate features:
+Dev A: Implementing a login system.
+Dev B: Building a new product search function.
+Dev C: Fixing a critical bug.
+Branching for Feature Isolation:
+
+Branch Creation: Each developer creates a branch from the master branch for their specific feature:
+Dev A: git branch login-feature
+Dev B: git branch product-search
+Dev C: git branch bugfix-critical
+This isolates their work, allowing them to develop features independently without affecting the main codebase.
+
+Development on Feature Branches:
+
+Developers work on their features, committing changes regularly to their respective branches.
+Git keeps track of each developer's progress within their isolated branch.
+Merging and Integration:
+
+Feature Completion: Once a feature is complete and tested, the developer initiates a merge request. This alerts the team for review.
+Code Review and Merge: Other developers review the code changes on the feature branch. This ensures quality control and identifies any conflicts.
+Resolving Conflicts (Optional): If changes in different branches overlap, Git might find merge conflicts. Developers need to work together to resolve these conflicts before merging.
+Merging into Master: After successful review and conflict resolution (if applicable), the feature branch is merged into the master branch, integrating the new functionality.
+Dev A: git checkout master && git merge login-feature
+Dev B: git checkout master && git merge product-search
+Dev C (hotfix): git checkout master && git merge --ff-only bugfix-critical (For bugfixes, --ff-only attempts a fast-forward merge, keeping history clean if possible)
+Benefits:
+
+Parallel Development: Developers work on features simultaneously, accelerating development.
+Isolation and Stability: Each feature is developed in isolation, protecting the master branch from unstable code.
+Code Review and Collaboration: Merge requests enable code review and discussions, improving code quality.
+Version Control: Git keeps track of all changes and branches, allowing easy rollbacks if needed.
+
+_______________Create a new branch:
+Bash
+git checkout -b <branch_name>
+
+
+This command creates a new branch named <branch_name> and switches you to that branch.
+
+Make changes to files:
+Edit the desired files in your code editor.
+Stage the changes:
+Bash
+git add <file1> <file2> ...
+
+
+This command adds the specified files (<file1>, <file2>, etc.) to the staging area, which tells Git you want to include them in the next commit.
+
+ Add all modified files:
+Bash
+git add .
+
+
+This adds all modified files in the current directory to the staging area.
+
+Commit your changes:
+Bash
+git commit -m "<commit message>"
+
+
+This command creates a commit with the provided message (<commit message>). It captures the staged changes into your Git repository history.
+
+Switch back to the main branch:
+Bash
+git checkout main
+
+
+This command switches you back to the main branch.
+
+Merge the feature branch into main:
+Bash
+git merge <branch_name>
+
+This command merges the changes from your feature branch (<branch_name>) into the main branch.
+
+(Optional) Resolve merge conflicts (if prompted):
+If there are conflicts between your branch and main, Git will pause and highlight the conflicting sections. You'll need to manually edit the files to resolve the conflicts.
+
+Push changes to the remote repository:
+Bash
+git push origin <branch_name>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q3.
+
+Create a GitHub Repository:
+
+Log in to your GitHub account.
+Click on the "+" icon in the top right corner and select "New repository."
+Give your repository a name (e.g., sample-project) and add a brief description (optional).
+Click "Create repository."
+Clone the Repository:
+
+Open your terminal application.
+Navigate to the directory where you want to clone the project.
+Use the following command to clone the repository, replacing <username> with your GitHub username and <repository_name> with the name you chose:
+Bash
+git clone https://github.com/<username>/<repository_name>.git
+
+
+
+Make Changes:
+
+Navigate to the cloned directory using cd <repository_name>.
+Create a new file (e.g., README.md) or edit existing files.
+Commit Your Changes:
+
+In the terminal, run git add <filename> to stage the changes (replace <filename> with the actual file name).
+Run git commit -m "<commit message>" to create a commit with a descriptive message (e.g., "Added a README file").
+Push Changes to Remote Repository:
+
+Make sure you have configured your local Git with your remote repository. You can follow GitHub's guide for setting up SSH keys or using a personal access token https://docs.github.com/articles/adding-a-new-ssh-key-to-your-github-account.
+Run git push origin main to push your local changes to the main branch of the remote repository.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q4.
+
+Local Changes:
+
+Identify the commit: Use git log to find the commit containing the sensitive file.
+
+There are two main approaches depending on whether the commit has been pushed or not:
+
+Unpushed Commit (Ideal Scenario):
+
+Use git rm --cached <file_name> to remove the file from the staging area.
+Run git commit --amend -CHEAD to amend the previous commit without the sensitive file. Provide a new commit message reflecting the removal.
+Pushed Commit:
+
+This requires rewriting Git history. There are two tools commonly used:
+git-filter-repo (more powerful but requires Python setup): Follow instructions on https://github.com/newren/git-filter-repo to install and use it to rewrite history, excluding the sensitive file.
+
+3. Remote Repository:
+
+Once you've removed the file from your local history using one of the methods above, push the changes to overwrite the remote branch containing the sensitive information.
+Use git push -f origin <branch_name> (force push). This is a destructive operation, so use it cautiously.
+4. Additional Considerations:
+
+If the sensitive information was exposed publicly, consider notifying relevant parties about the incident and any mitigation steps taken.
+Alternative: Depending on the severity of the information leak, you might consider deleting the entire repository and recreating it without the sensitive file
