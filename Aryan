@@ -1,0 +1,61 @@
+Q.1 Analise a scenario where multiple developers are working on different features of a project simultaneously. Discuss how Git branching and merging strategies can be utilized to manage this situation efficiently.
+Ans.
+ - Each developer creates a new branch for their assigned feature:
+     git checkout -b feature/feature_name
+- Developers regularly fetch and pull changes from the main branch to keep their feature branches up-to-date:
+     git fetch origin
+     git pull origin main
+- Developers work on their respective feature branches, making changes and committing them:
+     git add .
+     git commit -m "Implement feature X"
+- Push changes to the remote repository and ensure CI pipelines run tests:
+     git push origin feature/feature_name
+- Initiate code reviews for each feature branch before merging:
+     git request-pull main feature/feature_name
+- Decide whether to merge or rebase changes from the main branch into feature branches:
+     git merge main
+     or
+     git rebase main
+- Squash multiple commits into a single commit for cleaner history:
+     git rebase -i HEAD~n
+- Resolve any conflicts that arise during the merge process:
+     git status
+     git diff
+     [Resolve conflicts manually]
+     git add .
+     git commit
+- Once a set of features is complete and ready for release, tag the commit on the main branch with a version number:
+     git tag -a v1.0 -m "Version 1.0 release"
+- Push changes to the main branch after merging feature branches:
+     git push origin main
+- Delete feature branches that are no longer needed:
+     git branch -d feature/feature_name
+
+Q.2 Write a series of Git commands to create a new branch, make changes to files, commit those changes, merge the branch back into the main branch, and push changes to a remote repository.
+
+a.	git checkout -b feature/new-feature
+b.	git add .
+c.	Edit file as needed.
+d.	git commit -m "Implemented new feature"
+e.	git checkout main
+f.	git merge feature/new-feature
+g.	git push origin main
+
+
+
+Q.3 Create a GitHub repository for a sample project and demonstrate how to clone it, make changes, commit them, and push them back to the remote repository.
+
+Ans. Here are the concise steps:
+   - Create a new repository on GitHub.
+   - Use `git clone <repository_url>` to clone the repository to your local machine.
+   - Modify files in the cloned repository.
+   - Stage changes with `git add .` and commit with `git commit -m "Your message"`.
+   - Push committed changes to the remote repository with `git push origin main`.
+
+Q.4 You accidentally committed a file with sensitive information to a Git repository and pushed it to GitHub. Describe the steps you would take to remove that file from the commit history and GitHub repository.
+Ans. Here are the concise steps:
+1. Identify the commit with the sensitive file: `git log`.
+2. Remove the file from the commit history:
+   git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch <path_to_file>' --      prune-empty --tag-name-filter cat -- --all
+3. Force push changes to the remote repository:
+   git push origin --force --all
