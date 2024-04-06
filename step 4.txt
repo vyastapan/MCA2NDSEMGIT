@@ -1,0 +1,16 @@
+# Check the commit history
+git log --oneline
+
+# Remove the sensitive file from the commit
+git filter-branch --index-filter "git rm --cached --ignore-unmatch path/to/sensitive-file" HEAD
+
+# Force push to update the remote repository
+git push origin main --force
+
+# Add the sensitive file to .gitignore
+echo "path/to/sensitive-file" >> .gitignore
+
+# Commit and push the changes to update .gitignore
+git add .gitignore
+git commit -m "Update .gitignore to exclude sensitive file"
+git push origin main
