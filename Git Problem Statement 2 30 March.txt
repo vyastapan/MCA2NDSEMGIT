@@ -1,0 +1,13 @@
+Step1:- suppose here we create new branch as they wanted to change in the main branch. so to cretae a new branch :-
+git branch newbranch
+In this branch we add some file in it 
+Step2:- to add file on these branch we have
+git add .
+git add assignment2.html
+Step3:-now to commit the changes in file :-
+git commit -m"message"
+Step4:- to push the file to the feature branch :-
+git push origin newbranch
+Step5:-now developers merge their new branche to the main branch so first they checkout to the main branch then merge their feature branches to it. 
+git checkout master
+git merge newbranch

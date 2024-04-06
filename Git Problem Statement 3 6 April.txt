@@ -1,0 +1,9 @@
+Here are the key points about the release branching strategy:
+
+- Employed before software releases or deployments to production.
+- Involves creating a separate release branch from the main development branch.
+- Stabilizes code, performs final testing, and prepares for deployment in the release branch.
+- Isolates release-related changes from ongoing development in the main branch.
+- Allows for hotfixes to be applied directly to the release branch if critical issues are discovered.
+- Facilitates activities like documentation updates, version number incrementation, and packaging for the release.
+- Provides clear versioning by associating each release branch with a specific version of the software.
