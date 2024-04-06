@@ -1,0 +1,39 @@
+Fork the Repository:
+
+Go to the GitHub repository you want to contribute to.
+Click on the "Fork" button in the top right corner of the repository page.
+This creates a copy of the repository under your GitHub account.
+Clone the Forked Repository:
+
+On your forked repository page, click on the "Code" button and copy the repository URL.
+Open your terminal or Git bash and use the git clone command followed by the repository URL to clone the repository to your local machine:
+bash
+Copy code
+git clone <repository URL>
+Create a New Branch:
+
+Change to the directory of the cloned repository using cd.
+Create a new branch using the git checkout -b <branch-name> command:
+
+git checkout -b feature/new-feature
+Make Changes and Commit:
+
+Make changes to the code or files in your local repository
+Use git add . to stage all changes 
+Commit your changes 
+git commit -m "Your commit message here".
+Push Changes to Your Fork:
+
+Push your branch to your forked repository:
+git push origin feature/new-feature
+
+Create a Pull Request (PR):
+
+Go to your forked repository on GitHub.
+GitHub will detect that you pushed a new branch and offer a button to create a pull request.
+Click on "Compare & pull request" to start creating a pull request.
+Provide a title and description for your pull request, and then click "Create pull request".
+Review and Merge:
+
+The maintainers of the original repository will review your changes in the pull request.
+If everything looks good, they will merge your changes into the main branch of the original repository.
