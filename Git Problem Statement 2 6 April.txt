@@ -1,0 +1,8 @@
+Sure, here are the key points about feature branches in Git:
+
+- Feature branches are created to work on specific features or enhancements in a project.
+- They isolate changes, preventing them from affecting the main development branch.
+- Multiple developers can work on different features simultaneously using feature branches.
+- Feature branches facilitate code review, testing, and integration with CI/CD pipelines.
+- They maintain a clean version control history, making it easier to track changes related to specific features.
+- Feature branches encourage collaboration among team members by providing a focused environment for feature development.
