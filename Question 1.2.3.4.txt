@@ -1,0 +1,72 @@
+Question 1
+Step1:- suppose three developer create their feature branch as they wanted to change in the main branch. so to cretae a feature branch :-
+git branch featureb1
+git branch featureb2
+git branch featureb2
+these feture branch create by three different developer
+Step2:- to add file on these branch we have
+git add .
+git add filename
+Step3:-now to commit the changes in file :-
+git commit -m"message"
+Step4:- to push the file to the feature branch :-
+git push origin branch_main
+Step5:- now developers merge their feature branches to the main branch so first they checkout to the main branch then merge their feature branches to it. 
+git checkout main_branch
+git merge feature_branchname 
+
+
+Question 2
+Step1:- suppose here we create new branch as they wanted to change in the main branch. so to cretae a new branch :-
+git branch newbranch
+In this branch we add some file in it 
+Step2:- to add file on these branch we have
+git add .
+git add assignment2.html
+Step3:-now to commit the changes in file :-
+git commit -m"message"
+Step4:- to push the file to the feature branch :-
+git push origin newbranch
+Step5:-now developers merge their new branche to the main branch so first they checkout to the main branch then merge their feature branches to it. 
+git checkout master
+git merge newbranch 
+
+
+Question 3
+step1:- to create a git repository in hub 
+ go to github and login your account 
+step2:- on right side corner click on "+" to add new repository in the hub.
+step3:- enter the name of repository 
+step4:- add description if necessary as it is optional.
+step5:- now click on create repository
+now to clone your repository to the the system following commands are run on terminal.
+step6:- git clone "linkof the repossitory"
+step7:- now we have file and you want to change in it then do the changes.
+step8:- now, to add the file use
+git add file_name
+step9:- to make snapshot of your files commit these changes in staging area
+git commit -m"message"
+step10:- to push the file in remote repository
+git push origin main
+
+
+Question4
+Step1: Step1:- suppose here we create new branch as they wanted to remove  the file from the main branch. so to cretae a new branch :-
+git branch newbranch
+In this branch we add some file in it 
+Step2:- to add file on these branch we have
+git add .
+git add assignment2.html
+git add wrong.html
+Step3:-now to commit the changes in file :-
+git commit -m"message"
+Step4:- to push the file to the feature branch :-
+git push origin newbranch
+Step5:- to delete the file from branch :-
+git rm wrong.html
+Step6:-now to commit the changes in file :-
+git commit -m"messagedelete"
+Step7:- to back to the last successfull by using :-
+git rebase master
+Step8:- to push the file again after delete file :-
+git push origin newbranch
