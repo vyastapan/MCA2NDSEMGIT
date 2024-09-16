@@ -1,0 +1,16 @@
+que1:-
+step1:- suppose three developer create their feature branch as they wanted to change in the main branch. so to cretae a feature branch :-
+git branch featureb1
+git branch featureb2
+git branch featureb2
+these feture branch create by three different developer
+step2:- to add file on these branch we have
+git add .
+git add filename
+step3:-now to commit the changes in file :-
+git commit -m"message"
+step4:- to push the file to the feature branch :-
+git push origin branch_main
+step5:-now developers merge their feature branches to the main branch so first they checkout to the main branch then merge their feature branches to it. 
+git checkout main_branch
+git merge feature_branchname

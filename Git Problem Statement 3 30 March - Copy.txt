@@ -1,0 +1,15 @@
+step1:- to create a git repository in hub 
+ go to github and login your account 
+step2:- on right side corner click on "+" to add new repository in the hub.
+step3:- enter the name of repository 
+step4:- add description if necessary as it is optional.
+step5:- now click on create repository
+now to clone your repository to the the system following commands are run on terminal.
+step6:- git clone "linkof the repossitory"
+step7:- now we have file and you want to change in it then do the changes.
+step8:- now, to add the file use
+git add file_name
+step9:- to make snapshot of your files commit these changes in staging area
+git commit -m"message"
+step10:- to push the file in remote repository
+git push origin main
